@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Stack, Group, TextInput, Button, Title, Text, Paper, Popover, Anchor } from "@mantine/core";
+import { Stack, Group, TextInput, Button, Title, Text, Popover, Anchor } from "@mantine/core";
 import { SHA256 } from "crypto-js";
 
 /**

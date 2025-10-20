@@ -2,7 +2,7 @@
   "name": "ctf",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://Xantus10.github.io/CTF",
+  "homepage": "https://xantus10.github.io/CTF",
   "type": "module",
   "scripts": {
     "dev": "vite",

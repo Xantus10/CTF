@@ -50,6 +50,7 @@ function Challenge({title, content, solutionHash, files, hints}: ChallangeProps)
   if (hints === undefined) hints = [];
 
   function checkSolution() {
+    console.log(inp);
     if (solutionHash === SHA256(inp).toString()) {
       setBgCol("var(--mantine-color-green-9)")
       localStorage.setItem(solutionHash, inp);
@@ -62,7 +63,7 @@ function Challenge({title, content, solutionHash, files, hints}: ChallangeProps)
     let loc = localStorage.getItem(solutionHash);
     if (loc) {
       setInp(loc);
-      checkSolution();
+      setBgCol("var(--mantine-color-green-9)");
     }
   }, [])
 

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Stack, Group, TextInput, Button, Title, Text, Popover, Anchor } from "@mantine/core";
 import { SHA256 } from "crypto-js";
 
@@ -52,10 +52,18 @@ function Challenge({title, content, solutionHash, files, hints}: ChallangeProps)
   function checkSolution() {
     if (solutionHash === SHA256(inp).toString()) {
       setBgCol("var(--mantine-color-green-9)")
+      localStorage.setItem(solutionHash, inp);
     } else {
       setBgCol("var(--mantine-color-red-9)")
     }
   }
+
+  useEffect(() => {
+    let loc = localStorage.getItem(solutionHash);
+    if (loc) {
+      setInp(loc);
+    }
+  }, [])
 
 
   return (

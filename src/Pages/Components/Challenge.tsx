@@ -62,6 +62,7 @@ function Challenge({title, content, solutionHash, files, hints}: ChallangeProps)
     let loc = localStorage.getItem(solutionHash);
     if (loc) {
       setInp(loc);
+      checkSolution();
     }
   }, [])
 

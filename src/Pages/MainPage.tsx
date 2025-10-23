@@ -23,6 +23,7 @@ function MainPage() {
       <Code><div style={{wordWrap: 'break-word'}}>n=71176441092066411625367601667192399255165349695931</div></Code>
       <Code><div style={{wordWrap: 'break-word'}}>c=29498414316977244474057002469181107573714090746642</div></Code>
       <Text>Flag is in format: flag{'{'}[A-Za-z0-9]*{'}'}</Text></>} solutionHash="f22a4e255074c6f66e24fc1cd0874489ce4c4d5070c899e4848e8d8484b845b6" hints={["If you read the name, it spells factorize", "factordb", "Use the cryptic.py script"]} />
+      <Challenge title="08 Lord Playfair sends his regards" content={<><Text>Oi, bruv, here I've got a message for you.</Text><Text>The key you say? Well how about VDA's ... ehm, how do they call it ... "datová schránka"?</Text><Code><div style={{wordWrap: 'break-word'}}>UGZ AHFH KX WNA VPBX LKMHBVO RATTD</div></Code></>} solutionHash="a55482cad424ca4041b2282748d687ec6c557ef0e716032a6de45851d97e42a1" hints={["Bruv you blind? Read the title of the challenge", "The key is only the letters bruv (ignore numbers)"]} />
     </Stack>
   );
 }

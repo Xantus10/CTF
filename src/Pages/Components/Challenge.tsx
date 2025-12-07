@@ -77,6 +77,11 @@ function Challenge({title, content, solutionHash, flagFormat, files, hints}: Cha
       notifications.show({message: 'Flag does not match its RegEx!', color: "red", icon: <FaExclamationTriangle />});
       return;
     }
+    console.log(JSON.stringify(solutionHash));
+    console.log(JSON.stringify(SHA256(inp).toString()));
+    console.log(typeof(solutionHash));
+    console.log(typeof(SHA256(inp).toString()));
+    console.log(solutionHash === SHA256(inp).toString());
     if (solutionHash === SHA256(inp).toString()) {
       setBgCol("var(--mantine-color-green-9)");
       localStorage.setItem(LOCAL_STORAGE_NAME, inp);
@@ -103,10 +108,10 @@ function Challenge({title, content, solutionHash, flagFormat, files, hints}: Cha
       {content}
       <Text>{(flagFormat.message) ? flagFormat.message : "Flag is in format: "}{flagFormat.regex.source}</Text>
       {(files.length !== 0) ? <Text>Files to download</Text> : <></>}
-      <Group gap={10}>
+      <Group gap={30} wrap="wrap">
         {files.map((val) => {return <Anchor key={val.name} href={val.path} download={val.name}>{val.name}</Anchor>})}
       </Group>
-      <Text>Hints</Text>
+      {(hints.length !== 0) ? <Text>Hints</Text> : <></>}
       <Group gap={10}>
         {hints.map((val, ix) => {return <Popover key={ix} position="bottom"><Popover.Target><Button>{`Hint ${ix+1}`}</Button></Popover.Target><Popover.Dropdown styles={{dropdown: {backgroundColor: 'var(--mantine-color-dark-4)'}}}><Text>{val}</Text></Popover.Dropdown></Popover>})}
       </Group>

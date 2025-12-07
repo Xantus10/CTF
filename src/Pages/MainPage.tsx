@@ -1,7 +1,8 @@
-import { Stack, NativeSelect, Paper, Title } from "@mantine/core";
+import { Stack, NativeSelect, Paper, Title, Text } from "@mantine/core";
 import { useState } from "react";
 
 import C01 from "./CTFs/C01";
+import C02 from "./CTFs/C02";
 
 
 function MainPage() {
@@ -9,7 +10,7 @@ function MainPage() {
   /**
    * Different CTF challenges
    */
-  const CTFs : [
+  const CTFs : 
     {
       /**
        * Title of the CTF (Will be displayed)
@@ -17,12 +18,18 @@ function MainPage() {
       title: string;
 
       /**
+       * Optional description
+       */
+      description?: string;
+
+      /**
        * Component containing the challenges
        */
       comp: React.ReactNode;
-    }
-  ] = [
-    { title: 'Easy crypto CTF', comp: <C01 /> },
+    }[]
+   = [
+    { title: 'Easy crypto CTF', description: 'Beginner level crypto CTFs, featuring hashes, classical ciphers, XOR and much more!', comp: <C01 /> },
+    { title: 'Malware focused CTF', description: 'Some malware challenges and one stego for fun!', comp: <C02 /> }
   ];
 
   /**
@@ -34,6 +41,7 @@ function MainPage() {
     <Stack p={20} gap={10}>
       <NativeSelect label="Select a CTF" value={ctfIndex} data={CTFs.map((val, ix) => ({label: val.title, value: ix.toString()}))} onChange={(e) => setCtfIndex(parseInt(e.currentTarget.value))} />
       <Paper bg="blue.9" p={25} mb={24}><Title order={2}>{CTFs[ctfIndex].title}</Title></Paper>
+      <Text mb={24}>{CTFs[ctfIndex].description}</Text>
       {CTFs[ctfIndex].comp}
     </Stack>
   );

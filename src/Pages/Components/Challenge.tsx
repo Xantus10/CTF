@@ -77,11 +77,6 @@ function Challenge({title, content, solutionHash, flagFormat, files, hints}: Cha
       notifications.show({message: 'Flag does not match its RegEx!', color: "red", icon: <FaExclamationTriangle />});
       return;
     }
-    console.log(JSON.stringify(solutionHash));
-    console.log(JSON.stringify(SHA256(inp).toString()));
-    console.log(typeof(solutionHash));
-    console.log(typeof(SHA256(inp).toString()));
-    console.log(solutionHash === SHA256(inp).toString());
     if (solutionHash === SHA256(inp).toString()) {
       setBgCol("var(--mantine-color-green-9)");
       localStorage.setItem(LOCAL_STORAGE_NAME, inp);

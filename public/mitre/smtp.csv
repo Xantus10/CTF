@@ -1,0 +1,72 @@
+SourceIP,Command,CommandData,ResponseCode,ResponseText
+203.0.113.45,CONNECT,,220,mail.vulncomp.com ESMTP Postfix
+203.0.113.45,EHLO,DESKTOP-UU1VSFG,250,mail.vulncomp.com
+203.0.113.45,AUTH,LOGIN,334,VXNlcm5hbWU6
+203.0.113.45,AUTH,bWFyay5zbWl0aEB2dWxuY29tcC5jb20=,334,UGFzc3dvcmQ6
+198.51.100.77,CONNECT,,220,mail.vulncomp.com ESMTP Postfix
+203.0.113.45,AUTH,U210aDEyM1Bhc3MxMjM=,235,2.7.0 Authentication successful
+203.0.113.45,MAIL,FROM:<mark.smith@vulncomp.com>,250,2.1.0 Ok
+198.51.100.77,EHLO,python-smtp,250,mail.vulncomp.com
+18.44.172.16,CONNECT,,220,mail.vulncomp.com ESMTP Postfix
+192.122.4.55,CONNECT,,220,mail.vulncomp.com ESMTP Postfix
+192.122.4.55,EHLO,LAPTOP-UH0CCA4,250,mail.vulncomp.com
+192.122.4.55,AUTH,LOGIN,334,VXNlcm5hbWU6
+18.44.172.16,EHLO,DESKTOP-UHQ778S,250,mail.vulncomp.com
+203.0.113.45,RCPT,TO:<jeffbezos@millionaire.com>,250,2.1.5 Ok
+203.0.113.45,DATA,,354,End data with <CR><LF>.<CR><LF>
+198.51.100.77,VRFY,root@vulncomp.com,550,5.1.1 User unknown
+203.0.113.45,DATA,<MESSAGE-REDACTED>,250,2.0.0 Ok: queued as 9F3A21C4
+198.51.100.77,VRFY,admin@vulncomp.com,550,5.1.1 User unknown
+18.44.172.16,AUTH,LOGIN,334,VXNlcm5hbWU6
+203.0.113.45,QUIT,,221,2.0.0 Bye
+18.166.4.8,CONNECT,,220,mail.vulncomp.com ESMTP Postfix
+18.166.4.8,EHLO,DESKTOP-VE78AA6,250,mail.vulncomp.com
+18.166.4.8,AUTH,LOGIN,334,VXNlcm5hbWU6
+18.44.172.16,AUTH,bHVjaWEudmFyeUB2dWxuY29tcC5jb20=,334,UGFzc3dvcmQ6
+198.51.100.77,VRFY,test@vulncomp.com,550,5.1.1 User unknown
+18.44.172.16,AUTH,THVsdXZhMTk5Nw==,235,2.7.0 Authentication successful
+63.9.4.481,CONNECT,,220,mail.vulncomp.com ESMTP Postfix
+63.9.4.481,EHLO,DESKTOP-PMBVB41,250,mail.vulncomp.com
+198.51.100.77,VRFY,test1@vulncomp.com,550,5.1.1 User unknown
+18.44.172.16,MAIL,FROM:<lucia.vary@vulncomp.com>,250,2.1.0 Ok
+18.44.172.16,RCPT,TO:<support@netflix.com>,250,2.1.5 Ok
+18.44.172.16,DATA,,354,End data with <CR><LF>.<CR><LF>
+198.51.100.77,VRFY,jane.doe@vulncomp.com,550,5.1.1 User unknown
+18.44.172.16,DATA,<MESSAGE-REDACTED>,250,2.0.0 Ok: queued as 7AF9CCD4
+198.51.100.77,VRFY,joe.smith@vulncomp.com,550,5.1.1 User unknown
+18.44.172.16,QUIT,,221,2.0.0 Bye
+63.9.4.481,AUTH,LOGIN,334,VXNlcm5hbWU6
+63.9.4.481,AUTH,am9yLm5ldWVyQHZ1bG5jb21wLmNvbQ==,535,5.7.8 Authentication credentials invalid
+198.51.100.77,VRFY,mark.smith@vulncomp.com,252,2.0.0 mark.smith@vulncomp.com
+63.9.4.481,AUTH,LOGIN,334,VXNlcm5hbWU6
+63.9.4.481,AUTH,am9lLm5ldWVyQHZ1bG5jb21wLmNvbQ==,334,UGFzc3dvcmQ6
+63.9.4.481,AUTH,QmFobnN0cmFzc2U2NjQ=,235,2.7.0 Authentication successful
+198.51.100.77,VRFY,jack.smith@vulncomp.com,550,5.1.1 User unknown
+192.122.4.55,AUTH,cm9iaW4uc3VuZGF5QHZ1bG5jb21wLmNvbQ==,334,UGFzc3dvcmQ6
+192.122.4.55,AUTH,VGhlRG92ZTE0Nw==,235,2.7.0 Authentication successful
+192.122.4.55,MAIL,FROM:<robin.sunday@vulncomp.com>,250,2.1.0 Ok
+63.9.4.481,MAIL,FROM:<joe.neuer@vulncomp.com>,250,2.1.0 Ok
+63.9.4.481,RCPT,TO:<it-dept@vulncomp.com>,250,2.1.5 Ok
+198.51.100.77,VRFY,ceo@vulncomp.com,550,5.1.1 User unknown
+18.166.4.8,AUTH,am9zZS5tYXJ0aW5lekB2dWxuY29tcC5jb20=,334,UGFzc3dvcmQ6
+18.166.4.8,AUTH,UGFzc3dvcmQx,535,5.7.8 Authentication credentials invalid
+18.166.4.8,AUTH,LOGIN,334,VXNlcm5hbWU6
+63.9.4.481,DATA,,354,End data with <CR><LF>.<CR><LF>
+198.51.100.77,VRFY,support@vulncomp.com,252,2.0.0 support@vulncomp.com
+63.9.4.481,DATA,<MESSAGE-REDACTED>,250,2.0.0 Ok: queued as 41BE5D66
+63.9.4.481,QUIT,,221,2.0.0 Bye
+192.122.4.55,RCPT,TO:<mariana.rodriguez@spmail.es>,250,2.1.5 Ok
+192.122.4.55,DATA,,354,End data with <CR><LF>.<CR><LF>
+18.166.4.8,AUTH,am9zZS5tYXJ0aW5lekB2dWxuY29tcC5jb20=,334,UGFzc3dvcmQ6
+18.166.4.8,AUTH,UGFzc3cwcmQx,535,5.7.8 Authentication credentials invalid
+192.122.4.55,DATA,<MESSAGE-REDACTED>,250,2.0.0 Ok: queued as E9A11D0A
+192.122.4.55,QUIT,,221,2.0.0 Bye
+18.166.4.8,AUTH,LOGIN,334,VXNlcm5hbWU6
+18.166.4.8,AUTH,am9zZS5tYXJ0aW5lekB2dWxuY29tcC5jb20=,334,UGFzc3dvcmQ6
+18.166.4.8,AUTH,KlBhc3N3MHJkMQ==,235,2.7.0 Authentication successful
+198.51.100.77,QUIT,,221,2.0.0 Bye
+18.166.4.8,MAIL,FROM:<jose.martinez@vulncomp.com>,250,2.1.0 Ok
+18.166.4.8,RCPT,TO:<giveaway-4897@protonmail.com>,250,2.1.5 Ok
+18.166.4.8,DATA,,354,End data with <CR><LF>.<CR><LF>
+18.166.4.8,DATA,<MESSAGE-REDACTED>,250,2.0.0 Ok: queued as F79ADD1B
+18.166.4.8,QUIT,,221,2.0.0 Bye

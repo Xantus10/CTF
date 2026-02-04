@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import C01 from "./CTFs/C01";
 import C02 from "./CTFs/C02";
+import CMITRE from "./CTFs/CMITRE";
 
 
 function MainPage() {
@@ -29,6 +30,7 @@ function MainPage() {
     }[]
    = [
     { title: 'Easy crypto CTF', description: 'Beginner level crypto CTFs, featuring hashes, classical ciphers, XOR and much more!', comp: <C01 /> },
+    { title: 'MITRE Chain CTF', description: 'Our company was the target of a cyber attack. It is up to you to follow the attackers actions and understand how they did it.', comp: <CMITRE /> },
     { title: 'Malware focused CTF', description: 'Some malware challenges and one stego for fun!', comp: <C02 /> }
   ];
 

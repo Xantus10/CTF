@@ -52,6 +52,14 @@ function CMITRE() {
         {title: 'The exfiltrated data is also encrypted before sent, which encryption is used? (All uppercase)', solutionHash: 'a275a3e7dd3d2f90dae0ef8fd049bea71aec464d87f66791100beaf633ac6d7d', regex: /[A-Z]{3}/},
         {title: 'Which mitre subtechnique describes the encryption?', solutionHash: '4eb0dabf158c88108b17bfc9849806a03e4ba3f2e384469839c43aa6d6d9c4d6', regex: /T[0-9]{4}\.[0-9]{3}/}
       ]} />
+      <MultipartChallenge title="Command and Control - Messages investigation" content={<><Text>The C2 traffic was captured and in the file 'c2.csv' you have the messages in raw form. Can you answer the following questions?</Text></>} files={[{name: 'c2.csv', path: 'mitre/c2.csv'}]} 
+      parts={[
+        {title: 'What user account does the malware report is the current user (JoinCC function)', solutionHash: '774f20d8e50352b9c60d7165c1b811ad31198f97c716f766f020970d4cee4a02', regex: /[A-Za-z]+/},
+        {title: 'What is the first command issued?', solutionHash: 'ae70662926a2ec5cd413c425859ce85dce4e37f36dec8311490736f27324fec8', regex: /[a-z]+/},
+        {title: 'What is the fourth user account from the list that the disc command reports?', solutionHash: '532b32ec2e1e4b47f0c4908849325519d351d9415722cc4de4271d3485dd8850', regex: /[A-Za-z]+/},
+        {title: 'What tool did the attacker download on the machine?', solutionHash: 'f2e589860108e1dedfae546aa4ffde86c653da28a6c2b1816432cafbf1512d36', regex: /[a-z]{8}/},
+        {title: 'What is the mitre technique for downloading a tool?', solutionHash: 'b43ed3acb74bf2c3a57031e7c0a5d6d318ce82b4c0b45b091786dccc609df255', regex: /T[0-9]{4}/}
+      ]} />
     </Stack>
   );
 }

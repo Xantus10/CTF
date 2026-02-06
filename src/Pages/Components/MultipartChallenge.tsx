@@ -31,6 +31,11 @@ export interface MultipartChallangeProps {
      * Solution
      */
     solutionHash: string;
+
+    /**
+     * Regex to match the flag by
+     */
+    regex: RegExp;
   }[];
 
   /**
@@ -76,6 +81,10 @@ function MultipartChallenge({title, content, parts, files, hints}: MultipartChal
   const LOCAL_STORAGE_NAMES = parts.map((val, ix) => {return SHA256(title+ix.toString()+val.solutionHash).toString();})
 
   function checkSolution(ix: number) {
+    if (!inp[ix].match(parts[ix].regex)) {
+      notifications.show({message: 'Flag does not match its RegEx!', color: "red", icon: <FaExclamationTriangle />});
+      return;
+    }
     if (parts[ix].solutionHash === SHA256(inp[ix]).toString()) {
       setBgIx(ix, "var(--mantine-color-green-9)");
       localStorage.setItem(LOCAL_STORAGE_NAMES[ix], inp[ix]);
@@ -115,7 +124,7 @@ function MultipartChallenge({title, content, parts, files, hints}: MultipartChal
         parts.map((val, ix) => {
           return (
           <Group key={ix}>
-            <TextInput flex={5} styles={{input: {backgroundColor: bgCols[ix], color: "whitesmoke"}}} label={ixToLetter(ix) + ") " + val.title} value={inp[ix]} onChange={(e) => setInpIx(ix, e.currentTarget.value)} />
+            <TextInput flex={5} styles={{input: {backgroundColor: bgCols[ix], color: "whitesmoke"}}} label={ixToLetter(ix) + ") " + val.title} placeholder={val.regex.source} value={inp[ix]} onChange={(e) => setInpIx(ix, e.currentTarget.value)} />
             <Button flex={1} onClick={() => checkSolution(ix)}>Submit</Button>
           </Group>
           );

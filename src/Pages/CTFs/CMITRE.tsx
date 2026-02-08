@@ -60,6 +60,13 @@ function CMITRE() {
         {title: 'What tool did the attacker download on the machine?', solutionHash: 'f2e589860108e1dedfae546aa4ffde86c653da28a6c2b1816432cafbf1512d36', regex: /[a-z]{8}/},
         {title: 'What is the mitre technique for downloading a tool?', solutionHash: 'b43ed3acb74bf2c3a57031e7c0a5d6d318ce82b4c0b45b091786dccc609df255', regex: /T[0-9]{4}/}
       ]} />
+      <MultipartChallenge title="Impact - Understanding" content={<><Text>The attacker always attacks with a motive in their mind. Their tactics reflect this.</Text><Text>Answer always with a MITRE (sub)technique which reflects the described Impact.</Text></>} 
+      parts={[
+        {title: 'A ransomware left our accounting spreadsheets encrypted', solutionHash: 'fccb31ae0b49c5704f9c96a68b8e8f9605a735126dd4853aab960b6c7080a8d5', regex: /T[0-9]{4}/},
+        {title: 'Our server now shuts down every 5 seconds', solutionHash: 'ce36af6cdd60d245b446d3c54a36359fe18d2cea64b76803473253029641307c', regex: /T[0-9]{4}/},
+        {title: 'The attacker hacked a bank and set all account balances to 0', solutionHash: '96ca231e220df946c2a26a52bfc9940d1776a61c839840894f93b2de472620d2', regex: /T[0-9]{4}/},
+        {title: 'The attacker executed a reflection amplification attack on our Web server', solutionHash: '61ea9568aac8aeb693b744f9a761031d3e7824100d53fe6425ff5de39cc900d0', regex: /T[0-9]{4}\.[0-9]{3}/}
+      ]} />
     </Stack>
   );
 }

